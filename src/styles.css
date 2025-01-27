@@ -1,0 +1,379 @@
+/* styles.css */
+/* Updating the title styles to include standard background-clip */
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #6366f1, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+  }
+  
+  /* Rest of the CSS remains the same... */
+  :root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #ec4899;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --success-color: #22c55e;
+    --danger-color: #ef4444;
+  }
+  
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+  }
+  
+  .setup-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .nominee-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .nominee-form input {
+    padding: 10px 5px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .nominee-form input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  outline: none;
+}
+  
+.nominee-form button,
+.start-voting {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #6366f1, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+  .file-input-container {
+    position: relative;
+  }
+  
+  .photo-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  
+  .nominee-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: var(--card-background);
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nominee-list-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .nominee-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-btn, .delete-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .edit-btn {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .delete-btn {
+    background: var(--danger-color);
+    color: white;
+  }
+  
+  .edit-btn:hover, .delete-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .voting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .declare-winner-btn {
+    padding: 12px 24px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .declare-winner-btn:hover {
+    background: #16a34a;
+    transform: scale(1.05);
+  }
+  
+  .winner-announcement {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    animation: popIn 0.5s ease-out;
+    backdrop-filter: blur(10px); /* Add the blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Compatibility with Webkit-based browsers */
+  }
+  
+  
+  .trophy-icon {
+    font-size: 48px;
+    color: #fbbf24;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite;
+  }
+  
+  .winner-card {
+    margin: 10px 0;
+    padding: 80px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 12px;
+    color: white;
+  }
+  
+  .winner-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Continuing styles.css */
+.nominees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  .nominee-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .nominee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .nominee-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .nominee-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .nominee-photo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+  }
+  
+  .nominee-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #6366f1;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .nominee-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    color: var(--text-secondary);
+  }
+  
+  .nominee-card:hover .nominee-photo {
+    transform: scale(1.05);
+  }
+  
+  .vote-count {
+    position: relative;
+    margin: 15px 0;
+    height: 30px;
+    background: #f1f5f9;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .votes {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-weight: bold;
+    color: var(--text-primary);
+  }
+  
+  .vote-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .percentage {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #6366f1;
+    margin: 10px 0;
+  }
+  
+  .nominee-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .nominees-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .voting-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  
+  /* Animation for vote counting */
+  @keyframes countUp {
+    from {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  .vote-count.counting .votes {
+    animation: countUp 0.3s ease-out;
+  }
+
+  .home-btn { 
+    padding: 12px 24px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .home-btn:hover {
+    background: #4f46e5;
+    transform: scale(1.05);
+  }
+
+
+  .voting-actions {
+    display: flex;
+    gap: 15px;
+  }
